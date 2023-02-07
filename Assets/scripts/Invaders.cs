@@ -25,7 +25,7 @@ public class Invaders : MonoBehaviour
     {
         for (int row = 0; row < this.rows; row++)
         {
-            float width = 2.0f * (this.columns - 1);//29.52
+            float width = 2.0f * (this.columns - 1);
             float height = 2.0f * (this.rows - 1);
             Vector2 centering= new Vector2(-width/2,-height/2);
             Vector3 rowposition = new Vector3(centering.x, centering.y+(row * 2.0f), 0.0f);
@@ -49,7 +49,7 @@ public class Invaders : MonoBehaviour
     {
         this.transform.position += _direction * speed.Evaluate(percentkilled) * Time.deltaTime;
         Vector3 leftedge = Camera.main.ViewportToWorldPoint(Vector3.zero);
-        Vector3 rightedge = Camera.main.ViewportToWorldPoint(Vector3.right);
+        Vector3 rightedge = Camera.main.ViewportToWorldPoint(Vector3.right);//tim abi
         foreach (Transform invader in this.transform)
         {
             if (!invader.gameObject.activeInHierarchy)
@@ -63,7 +63,7 @@ public class Invaders : MonoBehaviour
             }
             else if (_direction == Vector3.left && invader.position.x <= leftedge.x+1)//+1 for padding.
             {
-                advancerow();//33.40
+                advancerow();
             }
         }
     }

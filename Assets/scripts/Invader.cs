@@ -19,7 +19,7 @@ public class Invader : MonoBehaviour
 
    private void Start()
    {
-      InvokeRepeating(nameof(animatesprite),this.animationtime,this.animationtime);
+      InvokeRepeating(nameof(animatesprite),animationtime,animationtime);
    }
 
    private void animatesprite()
